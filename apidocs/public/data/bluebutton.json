@@ -1,0 +1,144 @@
+{
+   "endpoints":[
+      {
+         "name":"Organizations",
+         "methods":[
+            {
+               "MethodName":"List Organizations",
+               "HTTPMethod":"GET",
+               "URI":"/organizations",
+               "RequiresOAuth":"N",
+               "parameters":[
+                   {
+                     "Name":"limit",
+                     "Required":"N",
+                     "Default":"30",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. The number of results to return. Default 30, max 100."
+                  },
+                  {
+                     "Name":"offset",
+                     "Required":"N",
+                     "Default":"0",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. Used for paging results."
+                  },
+                  {
+                     "Name":"category",
+                     "Required":"N",
+                     "Default":"",
+                     "Location":"query",
+                     "Type":"enumerated",
+                     "EnumeratedList": [
+                        "insurance",
+                        "provider",
+                        "pharmacy",
+                        "lab",
+                        "immunization",
+                        "hie"
+                     ],
+                     "Description":"Optional. Return only organizations that match a specific category."
+                  }
+               ]
+            },
+            {
+               "MethodName":"Get a specific organization",
+               "HTTPMethod":"GET",
+               "URI":"/organizations/:id",
+               "RequiresOAuth":"N",
+               "parameters":[
+                   {
+                     "Name":"id",
+                     "Required":"Y",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"The unique id of the organization."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Apps",
+         "methods":[
+            {
+               "MethodName":"List Apps",
+               "HTTPMethod":"GET",
+               "URI":"/apps",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"limit",
+                     "Required":"N",
+                     "Default":"30",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. The number of results to return. Default 30, max 100."
+                  },
+                  {
+                     "Name":"offset",
+                     "Required":"N",
+                     "Default":"0",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. Used for paging results."
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Stage2",
+         "methods":[
+            {
+               "MethodName":"List MU Stage 2 Hospitals & Providers",
+               "HTTPMethod":"GET",
+               "URI":"/stage2",
+               "RequiresOAuth":"N",
+               "parameters":[
+                  {
+                     "Name":"state",
+                     "Required":"N",
+                     "Location":"query",
+                     "Type":"string",
+                     "Description":"Optional. Two-letter state abbreviation, e.g. NY."
+                  },
+                  {
+                     "Name":"zip",
+                     "Required":"N",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. 5 digit zip code."
+                  },
+                  {
+                     "Name":"name",
+                     "Required":"N",
+                     "Location":"query",
+                     "Type":"string",
+                     "Description":"Optional. Name of hospital or individual provider, e.g. Jane Doe."
+                  },
+                  {
+                     "Name":"limit",
+                     "Required":"N",
+                     "Default":"30",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. The number of results to return. Default 30, max 100."
+                  },
+                  {
+                     "Name":"offset",
+                     "Required":"N",
+                     "Default":"0",
+                     "Location":"query",
+                     "Type":"number",
+                     "Description":"Optional. Used for paging results."
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
+

@@ -1,0 +1,10 @@
+{
+  "NODE_ENV":"development",
+  "ADMIN_USER":"local",
+  "ADMIN_PASSWORD":"testing",
+  "MANDRILL_APIKEY":"ABC123",
+  "MANDRILL_USERNAME":"something@heroku.com",
+  "MANDRILL_SUBACCOUNT":"some-account",
+  "MONGO_CONNECTION": "<user>:<password>@someserver.com:PORT/bluebutton",
+  "APPROVAL_EMAIL": "bluebutton@bluebutton.com"
+}

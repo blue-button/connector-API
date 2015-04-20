@@ -1,0 +1,9 @@
+{
+    "bluebutton": {
+        "name": "Blue Button Connector API",
+        "protocol": "http",
+        "baseURL": "api.bluebuttonconnector.healthit.gov",
+        "publicPath": "",
+        "headers" : {}
+    }
+}

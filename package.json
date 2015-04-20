@@ -1,0 +1,34 @@
+{
+  "name": "BlueButtonConnectorAPI",
+  "version": "0.0.0",
+  "description": "Proxy to the data which lives in MongoDB (via hosted service compose.io)",
+  "main": "server.js",
+  "engines": {
+    "node": "0.12.2"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000 --reporter nyan",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "connect-redis": "1.0.6",
+    "cors": "^2.5.3",
+    "express": "~3.4.7",
+    "jade": "0.32.0",
+    "mandrill-api": "^1.0.39",
+    "monk": "^1.0.1",
+    "nconf": "~0.6.9",
+    "oauth": "0.9.10",
+    "querystring": "0.1.0",
+    "redis": "0.8.3",
+    "request": "^2.30.0",
+    "x-ray": "^1.0.3"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4",
+    "supertest": "^0.15.0"
+  }
+}
