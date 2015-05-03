@@ -164,6 +164,7 @@ app.get('/pending/:type(organizations|apps)/:id', requireHTTPS, express.basicAut
           delete pObj.submitter_email;
           delete pObj.submitter_reason;
           delete pObj._id;
+          delete pObj.type;
           if (alreadyExists) {
             dbo.updateById(alreadyExists._id, pObj, function(err, updateRes) {
               if (err) return res.send(500, err);
