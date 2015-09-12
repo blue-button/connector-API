@@ -122,7 +122,7 @@ app.get('/:type(organizations|apps)/:id', cors(), function(req, res) {
 });
 
 //////////////////////////////////////////////////////////////////////////////////////// POST
-app.post('/:type(apps|organizations)', cors(postWhiteList), function(req, res) {
+app.post('/:type(apps|organizations)', cors(corsPostOptions), function(req, res) {
   var type = req.params.type;
   var pObj = models[type].create(req.body);
   if (pObj.error) return res.send(400, pObj);
@@ -138,7 +138,7 @@ app.post('/:type(apps|organizations)', cors(postWhiteList), function(req, res) {
 });
 
 // FOR THE PROTECTED CORS
-app.options('/(apps|organizations)', cors(postWhiteList));
+app.options('/:type(apps|organizations)', cors());
 
 
 //////////////////////////////////////////////////////////////////////////////////////// PENDING (PROTECTED BY BASIC AUTH)
