@@ -53,7 +53,7 @@ describe('ORGANIZATIONS', function(){
         .end(function(err, res) {
           if (err) return done(err);
           res.body.should.be.instanceof(Object).and.have.keys('success', 'saved');
-          res.body.saved.url.should.be.instanceof(Object).and.not.have.key('bad_url');
+          res.body.saved.url.should.equal('');
           pendingId = res.body.saved._id;
           done();
         });
@@ -107,9 +107,7 @@ describe('ORGANIZATIONS', function(){
         organization: "Another fake organization",
         submitter_email: "example@example.com",
         submitter_reason: "I work for the company",
-        url: {
-          login: "http://www.anotherfakeorganization.com"
-        }
+        url: "http://www.anotherfakeorganization.com"
       }
       var pendingId;
 

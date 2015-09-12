@@ -36,7 +36,7 @@ var corsPostOptions = {
 
 var db = {};
 db.apps = monk.get('apps');
-db.organizations = monk.get('organizations');
+db.organizations = monk.get('simple_organizations');
 db.pending = monk.get('pending');
 db.stage2 = monk.get('stage2');
 

@@ -21,76 +21,17 @@ var exports = module.exports = {
       return validated;
     }
   },
-
   organizations : {
     definition : {
-     "organization":     {dataType: "string"},
+      "organization":    {dataType: "string"},
       "category":        {dataType: "string"},
       "states":          {dataType: "array"},
       "phone":           {dataType: "string"},
-      "url": {
-        "login":         {dataType: "string"},
-        "logo":          {dataType: "string"},
-        "mobile":        {dataType: "string"},
-        "screenshot":    {dataType: "string"},
-        "web":           {dataType: "string"}
-      },
+      "url":             {dataType: "string"},
       "description":     {dataType: "string"},
-      "bb_logo":         {dataType: "boolean"},
-      "view": {
-        "active_prescriptions": {dataType: "boolean"},
-        "allergies":            {dataType: "boolean"},
-        "appointment_history":  {dataType: "boolean"},
-        "claims":               {dataType: "boolean"},
-        "diagnostics":          {dataType: "boolean"},
-        "family_history":       {dataType: "boolean"},
-        "imaging":              {dataType: "boolean"},
-        "immunizations":        {dataType: "boolean"},
-        "lab_results":          {dataType: "boolean"},
-        "medical_history":      {dataType: "boolean"},
-        "medications":          {dataType: "boolean"},
-        "pathology":            {dataType: "boolean"},
-        "prescriptions":        {dataType: "boolean"},
-        "problems":             {dataType: "boolean"},
-        "visit_history":        {dataType: "boolean"},
-        "vitals":               {dataType: "boolean"}
-      },
-      "download": {
-        "text":  {dataType: "boolean"},
-        "pdf":   {dataType: "boolean"},
-        "c32":   {dataType: "boolean"},
-        "ccda":  {dataType: "boolean"},
-        "other": {dataType: "boolean"}
-      },
-      "transmit": {
-        "direct": {
-          "enabled":    {dataType: "boolean"},
-          "trust_bundles": {
-            "patient":  {dataType: "boolean"},
-            "provider": {dataType: "boolean"},
-            "other":    {dataType: "boolean"}
-          }
-        }
-      },
-      "services": {
-        "refills":                {dataType: "boolean"},
-        "automatic_refills":      {dataType: "boolean"},
-        "transfer_prescriptions": {dataType: "boolean"},
-        "bill_pay":               {dataType: "boolean"},
-        "caregiving":             {dataType: "boolean"},
-        "dispute":                {dataType: "boolean"},
-        "family_prescriptions":   {dataType: "boolean"},
-        "new_prescriptions":      {dataType: "boolean"},
-        "open_notes":             {dataType: "boolean"},
-        "reminders":              {dataType: "boolean"},
-        "scheduling":             {dataType: "boolean"},
-        "search":                 {dataType: "boolean"},
-        "secure_messaging":       {dataType: "boolean"},
-        "self_entered":           {dataType: "boolean"},
-        "shop":                   {dataType: "boolean"},
-        "test_request":           {dataType: "boolean"},
-        "email_alerts":           {dataType: "boolean"}
-      }
+      "view":            {dataType: "boolean"},
+      "download":        {dataType: "boolean"},
+      "transmit":        {dataType: "boolean"}
     },
     create : function(obj) {
       if (!obj.organization || obj.organization == "") return {error: 'no empty organization'};
@@ -105,6 +46,89 @@ var exports = module.exports = {
       return validated;
     }
   }
+  // organizations : {
+  //   definition : {
+  //    "organization":     {dataType: "string"},
+  //     "category":        {dataType: "string"},
+  //     "states":          {dataType: "array"},
+  //     "phone":           {dataType: "string"},
+  //     "url": {
+  //       "login":         {dataType: "string"},
+  //       "logo":          {dataType: "string"},
+  //       "mobile":        {dataType: "string"},
+  //       "screenshot":    {dataType: "string"},
+  //       "web":           {dataType: "string"}
+  //     },
+  //     "description":     {dataType: "string"},
+  //     "bb_logo":         {dataType: "boolean"},
+  //     "view": {
+  //       "active_prescriptions": {dataType: "boolean"},
+  //       "allergies":            {dataType: "boolean"},
+  //       "appointment_history":  {dataType: "boolean"},
+  //       "claims":               {dataType: "boolean"},
+  //       "diagnostics":          {dataType: "boolean"},
+  //       "family_history":       {dataType: "boolean"},
+  //       "imaging":              {dataType: "boolean"},
+  //       "immunizations":        {dataType: "boolean"},
+  //       "lab_results":          {dataType: "boolean"},
+  //       "medical_history":      {dataType: "boolean"},
+  //       "medications":          {dataType: "boolean"},
+  //       "pathology":            {dataType: "boolean"},
+  //       "prescriptions":        {dataType: "boolean"},
+  //       "problems":             {dataType: "boolean"},
+  //       "visit_history":        {dataType: "boolean"},
+  //       "vitals":               {dataType: "boolean"}
+  //     },
+  //     "download": {
+  //       "text":  {dataType: "boolean"},
+  //       "pdf":   {dataType: "boolean"},
+  //       "c32":   {dataType: "boolean"},
+  //       "ccda":  {dataType: "boolean"},
+  //       "other": {dataType: "boolean"}
+  //     },
+  //     "transmit": {
+  //       "direct": {
+  //         "enabled":    {dataType: "boolean"},
+  //         "trust_bundles": {
+  //           "patient":  {dataType: "boolean"},
+  //           "provider": {dataType: "boolean"},
+  //           "other":    {dataType: "boolean"}
+  //         }
+  //       }
+  //     },
+  //     "services": {
+  //       "refills":                {dataType: "boolean"},
+  //       "automatic_refills":      {dataType: "boolean"},
+  //       "transfer_prescriptions": {dataType: "boolean"},
+  //       "bill_pay":               {dataType: "boolean"},
+  //       "caregiving":             {dataType: "boolean"},
+  //       "dispute":                {dataType: "boolean"},
+  //       "family_prescriptions":   {dataType: "boolean"},
+  //       "new_prescriptions":      {dataType: "boolean"},
+  //       "open_notes":             {dataType: "boolean"},
+  //       "reminders":              {dataType: "boolean"},
+  //       "scheduling":             {dataType: "boolean"},
+  //       "search":                 {dataType: "boolean"},
+  //       "secure_messaging":       {dataType: "boolean"},
+  //       "self_entered":           {dataType: "boolean"},
+  //       "shop":                   {dataType: "boolean"},
+  //       "test_request":           {dataType: "boolean"},
+  //       "email_alerts":           {dataType: "boolean"}
+  //     }
+  //   },
+  //   create : function(obj) {
+  //     if (!obj.organization || obj.organization == "") return {error: 'no empty organization'};
+  //     var validated = validate(obj, this.definition, {});
+  //     validated.id = safeId(validated.organization);
+  //     if (typeof obj.updated == "undefined") {
+  //       validated.updated = Date();
+  //     } else {
+  //       validated.updated = obj.updated;
+  //     }
+
+  //     return validated;
+  //   }
+  // }
 };
 
 
@@ -137,6 +161,8 @@ function typeEnforcer(type, val){
       break;
     case "string":
       if ( (val === null) || (val === "undefined") || (typeof val === "undefined") ) {
+        validVal = '';
+      } else if (typeof val == "object") {
         validVal = '';
       } else {
         validVal = trim(String(val));
