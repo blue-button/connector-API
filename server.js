@@ -123,6 +123,8 @@ app.get('/:type(organizations|apps)/:id', cors(), function(req, res) {
 
 //////////////////////////////////////////////////////////////////////////////////////// POST
 app.post('/:type(apps|organizations)', cors(corsPostOptions), function(req, res) {
+  //this should stop most of the spam we've been getting
+  if (req.body.submitter_email == '{{submitter_email}}') return res.send(400);
   var type = req.params.type;
   var pObj = models[type].create(req.body);
   if (pObj.error) return res.send(400, pObj);
