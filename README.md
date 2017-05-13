@@ -1,5 +1,6 @@
 Blue Button "Connector" API.
 ---
+_NOTE: As of May 2017, this API is being turned off an will no longer be maintained or updated_
 
 This is the API that drives the [Blue Button Connector site](http://bluebuttonconnector.healthit.gov)
 
